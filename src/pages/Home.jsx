@@ -26,7 +26,7 @@ const Home = () => {
       <div data-aos="fade-up" data-aos-delay="400">
         <TopDoctors />
       </div>
-      <div data-aos="fade-up" data-aos-delay="600">
+      <div data-aos="fade-up" data-aos-delay="200">
         <Banner/>
       </div>
     </div>
