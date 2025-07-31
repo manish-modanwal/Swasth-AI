@@ -22,23 +22,26 @@ const Doctors = () => {
 
   return (
     <div className="p-6">
-      <p className="text-xl font-semibold mb-4">Browse through the doctors specialist.</p>
+      <p className="text-gray-600">Browse through the doctors specialist.</p>
       
-      <div className="flex gap-4 mb-6 flex-wrap text-blue-600 font-medium">
-        <p>General Physician</p>
-        <p>Gynecologist</p>
-        <p>Dermatologist</p>
-        <p>Pediatricians</p>
-        <p>Neurologists</p>
-        <p>Gastroenterologists</p>
-      </div>
+      <div className="flex flex-col sm:flex-row items-start gap-5 mt-5">
+       <div className='flex flex-col gap-4 text-sm text-gray-600'>
+        <p onClick={()=>speciality==='General Physician' ? navigate('/doctors') : navigate('/doctors/General Physician')} className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-400 rounded transition-all cursor-pointer `}>General Physician</p>
+        <p onClick={()=>speciality==='Gynecologist' ? navigate('/doctors') : navigate('/doctors/Gynecologist')} className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-400 rounded transition-all cursor-pointer `}>Gynecologist</p>
+        <p onClick={()=>speciality==='Dermatologist' ? navigate('/doctors') : navigate('/doctors/Dermatologist')} className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-400 rounded transition-all cursor-pointer `}>Dermatologist</p>
+        <p onClick={()=>speciality==='Pediatricians' ? navigate('/doctors') : navigate('/doctors/Pediatricians')} className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-400 rounded transition-all cursor-pointer `}>Pediatricians</p> 
+        <p onClick={()=>speciality==='Neurologists' ? navigate('/doctors') : navigate('/doctors/Neurologists')} className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-400 rounded transition-all cursor-pointer `}>Neurologists</p>
+        <p onClick={()=>speciality==='Gastroenterologists' ? navigate('/doctors') : navigate('/doctors/Gastroenterologists')} className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-400 rounded transition-all cursor-pointer `}>Gastroenterologists</p>
+       </div>
+        
+    
 
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="w-full flex justify-start flex-wrap gap-6 ">
         {filterDoc.map((item, index) => (
           <div
             onClick={() => navigate(`/appointment/${item._id}`)}
             key={index}
-            className="cursor-pointer bg-white/80 backdrop-blur-md border border-blue-100 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transform transition-all duration-300 hover:-translate-y-2"
+            className="w-52 h-92 cursor-pointer bg-white/80 backdrop-blur-md border border-blue-100 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transform transition-all duration-300 hover:-translate-y-2"
           >
             <img
               src={item.image}
@@ -55,6 +58,7 @@ const Doctors = () => {
             </div>
           </div>
         ))}
+          </div>
       </div>
     </div>
   );
