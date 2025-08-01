@@ -4,10 +4,11 @@ export const AppContext = React.createContext();
 
 const AppContextProvider =(props)=>{
 
-
+    const currencySymbol ='$'
 
     const value={
-        doctors
+        doctors,
+        currencySymbol
     }
 
     return (
